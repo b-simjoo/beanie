@@ -62,7 +62,7 @@ async def example():
     client = AsyncIOMotorClient("mongodb://user:pass@host:27017")
 
     # Initialize beanie with the Product document class
-    await init_beanie(database=client.db_name, document_models=[Product])
+    await init_beanie(database=client.get_database(), document_models=[Product])
 
     chocolate = Category(name="Chocolate", description="A preparation of roasted and ground cacao seeds.")
     # Beanie documents work just like pydantic models
