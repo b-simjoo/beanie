@@ -740,6 +740,9 @@ class Document(
             *args, session=session, bulk_writer=bulk_writer, **pymongo_kwargs
         )
 
+    def get_link(self) -> Link:
+        return self.link_from_id(self.id)
+
     def set(
         self,
         expression: Dict[Union[ExpressionField, str], Any],
